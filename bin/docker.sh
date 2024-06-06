@@ -5,7 +5,7 @@ set -x
 CI=${CI:-false}
 DEBUG=${DEBUG:-false}
 
-OPTS=""
+OPTS="--network host"
 if [ "$CI" != "true" ]; then
     # When run locally volume mounts match ownership of current user.
     OPTS="$OPTS --user $(id -u):$(id -g)"
